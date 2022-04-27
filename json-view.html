@@ -7,6 +7,40 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <h1 style="">format json</h1>
+
+  <textarea id="json_in" style="width: 1024px; height: 150px;">
+
+  </textarea>
+
+  <button id="btn_json">
+    parse 
+  </button>
+
+  <hr>
+
+  <pre id="json_out">
+    
+  </pre>
+
+  <script>
+      var json_in = document.getElementById('json_in');
+      var json_out = document.getElementById('json_out');
+
+      // const json = JSON.parse(`{"a":1,"cc":[1, 2, 3]}`);
+      // console.log(json);
+      // const format_json = JSON.stringify(json, null, 4);
+      // console.log(format_json);
+      // json_out.textContent = format_json;
+      var btn_json = document.getElementById('btn_json');
+
+      btn_json.onclick = () => {
+          var jText = json_in.textContent;
+          console.log(jText);
+          jText = JSON.parse(jText);
+          var inner_json_format = JSON.stringify(jText, null, 4);
+          json_out.textContent = inner_json_format;
+      };
+  </script>
 </body>
 </html>
